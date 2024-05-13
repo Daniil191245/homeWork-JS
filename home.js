@@ -36,7 +36,8 @@ console.log(window);
 const ages = prompt("Скільки вам років?");
 if (ages >= 18) {
   alert("Ви можете продовжувати свої дії!");
-} else {
+} 
+else {
   alert("Ви Не можете продовжувати свої дій, так як вам ще немає 18 років.");
 }
 console.log(ages);
