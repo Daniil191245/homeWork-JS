@@ -10,6 +10,6 @@ const word1 = "My";
 const word2 = "name";
 const word3 = "is";
 // const fullName = word1 + " " + word2+ " " + word3 + " "+ "Viktor"; // це є спосіб конкатенізації
-const fullName = `${word1} ${word2} ${word3} Viktor `;
-console.log(fullName); // це є спосіб інтерполяції
+const fullName = `${word1} ${word2} ${word3} Viktor `;// це є спосіб інтерполяції
+console.log(fullName); 
 // Створіть змінну userName з ім’ям користувача і змінну payment з сумою до оплати. За допомогою шаблонного рядка виведіть на екран через alert повідомлення на прикладі цього: «Дякуємо, Олександро! До сплати 300 гривень»
