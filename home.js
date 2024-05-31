@@ -72,3 +72,4 @@ const radius = 6;
 const pi = 3.14;
 const circleInfo = `Коло з радіусом ${radius} має площу ${pi * Math.pow(radius, 2)}`;
 console.log(circleInfo);
+// Додаткові завдання дороблю
