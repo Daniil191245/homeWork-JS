@@ -1,6 +1,6 @@
 // 1)
-const button = document.querySelector(".button");
-const input = document.querySelector(".input");
+const button = document.getElementById("button");
+const input = document.getElementById("input");
 button.textContent = input.value;
 console.log(button);
 // 2)
