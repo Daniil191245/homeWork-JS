@@ -13,10 +13,11 @@ link.href = "https://rozetka.com.ua/ua/";
 const img1 = document.querySelector(".img1");
 img1.alt = "nice nature";
 // 4)
-// const oneListElements = document.querySelector(".list");
-// const oneListElementChild =
-//   oneListElements.firstElementChild.querySelector(".text");
-// oneListElementChild.textContent = "Hello one elements";
+const oneListElements = document.querySelector(".list");
+const oneListElementChild =
+  oneListElements.firstElementChild.querySelector(".text");
+oneListElementChild.textContent = "Hello one elements";
+// цей варіант трішки складніше, тому що ми використовуємо, ще одну властивість firstElementChild.
 
 const oneListElements1 = document.querySelector(".text");
 oneListElements1.textContent = "Hello one elements";
