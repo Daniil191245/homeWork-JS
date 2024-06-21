@@ -203,9 +203,9 @@ switch (lang) {
     break;
 }
 // Напиши скрипт вибору готеля по кількості зірок (1 — 20$, 2 — 30$, 3 — 50$, 4 — 70$, 5 — 120$). Якщо в змінній stars щось окрім чисел 1-5, виведи рядок: 'Токої кількості зірок немає'.
-const stars = parseInt(prompt(
-  "Введіть кількість зірок готелю у який Ви хочете приїхати"
-));
+const stars = parseInt(
+  prompt("Введіть кількість зірок готелю у який Ви хочете приїхати")
+);
 const starsOne = "20$";
 const starsTwo = "30$";
 const starsThree = "50$";
@@ -239,4 +239,61 @@ switch (stars) {
 // У мене є сумніві щодо раціональності реалізації цього завдання, тому що велика низка змінних записано. Може є коротший шлях. В принципі можна записати в інтерполяції ціну, а не змінну яка підтягується з пам'яті, в цьому випадку ми скоротимо в пам'яті комп'ютера змінні.
 
 // При виконанні домашнього завдання стикався з деяками труднощами, але з ними вправився.
-// Примітка: треба повторювати конспект, щоб пам'ятати всі нюанси 
+// Примітка: треба повторювати конспект, щоб пам'ятати всі нюанси
+
+
+
+
+
+
+// 2
+// Створити розмітку  з двома числовими полями та кнопкою. При натисканні на кнопку перевіряти, чи сума значень полів більша за 10, якщо так, то виводити повідомлення "Сума більша за 10", якщо ні — "Сума менша або дорівнює 10".
+const inputNumber1 = document.getElementById("number1");
+const inputNumber2 = document.getElementById("number2");
+const buttonNumber = document.getElementById("button-number");
+buttonNumber.addEventListener("click", onButtonNumber);
+function onButtonNumber() {
+  const userInputNumber1 = Math.round(inputNumber1.value);
+  const userInputNumber2 = Math.round(inputNumber2.value);
+  const summaUserInputNumber = userInputNumber1 + userInputNumber2;
+  if (summaUserInputNumber > 10) {
+    console.log("Сума більша за 10");
+  } else {
+    console.log("Сума менша або дорівнює 10");
+  }
+  // Примітка: в умові задачи НЕ сказали включно чи ні більше значення 10.
+}
+// 3
+// Створити розмітку  з текстовим полем та кнопкою. При натисканні на кнопку перевіряти, чи введений текст містить слово "JavaScript", якщо так, то виводити повідомлення "Текст містить слово JavaScript", якщо ні — "Текст не містить слово JavaScript".
+const inputJS = document.getElementById("input-js");
+const buttonJs = document.querySelector(".button-js");
+buttonJs.addEventListener("click", onButtonJS);
+function onButtonJS() {
+  const userInputJS = inputJS.value;
+  if (userInputJS.includes("JavaScript")) {
+    console.log("Текст містить слово JavaScript");
+  } else {
+    console.log("Текст не містить слово JavaScript");
+  }
+}
+// 4
+// Створити розмітку  з формою з полями введення та кнопкою. При натисканні на кнопку перевіряти, чи введене число більше за 10 та менше за 20, якщо так, то виводити повідомлення "Число входить в діапазон від 10 до 20", якщо ні — "Число не входить в діапазон від 10 до 20".
+const numericInput = document.querySelector(".numeric-input");
+const numericButton = document.querySelector(".numeric-button");
+numericButton.addEventListener("click", onNumericButton);
+function onNumericButton() {
+  const userNumeric = Math.round(numericInput.value);
+  if (userNumeric > 10 && userNumeric < 20) {
+    console.log("Число входить в діапазон від 10 до 20");
+  } else {
+    console.log("Число не входить в діапазон від 10 до 20");
+  }
+}
+// якщо ми закоментуємо тег fоrm, то побачимо, що в консолі виводить задану умову
+
+
+// залишилось доробити 1 та 5 задачу
+// 1
+// Створити розмітку з двома текстовими полями та кнопкою. При натисканні на кнопку перевіряти, чи обидва поля містять значення, якщо так, то виводити повідомлення "Обидва поля заповнені", якщо ні — "Не всі поля заповнені".
+// 5
+// Створити розмітку  з формою з полями введення та кнопкою. При натисканні на кнопку перевіряти, чи введені дані правильно заповнені, якщо так, то перенаправляти на іншу сторінку, якщо ні — виводити повідомлення про помилку. Правильно заповнені дані: ім'я містить не менше 3 символів, email містить символ @ та крапку після неї, пароль містить не менше 6 символів.
