@@ -127,3 +127,113 @@ function onButtonOperations() {
     }
   }
 }
+
+//  Творчі завдання
+// Написати програму яка перевіряє чи введене число через input потрапляє в діапазон від 55 до 99 включно. Якщо так, вивести на екран "Число потрапляє в діапазон". Якщо ні, вивести "Число не потрапляє в діапазон".
+const numberAge = document.querySelector(".number-age");
+const buttonAge = document.querySelector(".button-age");
+buttonAge.addEventListener("click", onButtonAge);
+function onButtonAge() {
+  const numberAgeUser = numberAge.value;
+  if (numberAgeUser >= 55 && numberAgeUser <= 99) {
+    alert("Число потрапляє в діапазон");
+  } else {
+    alert("Число не потрапляє в діапазон");
+  }
+}
+// Є 3 вікові групи : діти (0-16), дорослі (17-60), пенсіонери (61-100). До якої групи відноситься Максим, якщо йому 55 років. Назву групи вивести на екран.
+const ageMax = 55;
+if (ageMax >= 0 && ageMax <= 16) {
+  alert("Максим відноситься до групи: діти");
+} else if (ageMax >= 17 && ageMax <= 60) {
+  alert("Максим відноситься до групи: дорослі");
+} else if (ageMax >= 61 && ageMax <= 100) {
+  alert("Максим відноситься до групи: пенсіонери");
+}
+// Якщо ваше ім’я містить більше 4 букв і прізвище більше 5, то виведіть на екран число,яке дорівнює сумі букв імені і прізвища. Якщо умова не виконується - вивести “УПС”. Наприклад: “Віктор Сташко” Віктор — 6 літер, Сташко — 6 літер. Виводимо 12. Використовувати вбудований метод length.
+const nameInput = document.querySelector(".name");
+const surnameInput = document.querySelector(".surname");
+const buttonInform = document.querySelector(".button-inform");
+buttonInform.addEventListener("click", onButtonInform);
+function onButtonInform() {
+  const nameUser = nameInput.value.length.trim();
+  const surnameUser = surnameInput.value.length;
+  if (nameUser > 4 && surnameUser > 5) {
+    const sum = nameUser + surnameUser;
+    alert(`Сума становить: ${sum}`);
+  } else {
+    alert("УПС");
+  }
+}
+// Виберіть будь-яке число від 1 до 5 включно через функцію random. За допомогою if else визначіть, що це за число.
+
+const numbers = Math.round(Math.random() * (5 - 1) + 1);
+if (numbers === 1) {
+  console.log("це 1");
+} else if (numbers === 2) {
+  console.log("це 2");
+} else if (numbers === 3) {
+  console.log("це 3");
+} else if (numbers === 4) {
+  console.log("це 4");
+} else {
+  console.log("це 5");
+}
+// Змінна lang може приймати 4 значення: 'ua', 'en', 'ru', 'fr'. За допомогою конструкції switch виведи на екран назву місяця в залежності від обраної мови. Наприклад, якщо lang = 'fr', то в консоль виводимо "Janvier".
+const lang = prompt("Введіть мову");
+const lang1 = "ua";
+const lang2 = "en";
+const lang3 = "ru";
+const lang4 = "fr";
+switch (lang) {
+  case lang1:
+    console.log("червень");
+    break;
+  case lang2:
+    console.log("June");
+    break;
+  case lang3:
+    console.log("Июнь");
+    break;
+  case lang4:
+    console.log("Janvier");
+    break;
+  default:
+    console.log("Спробуй ще раз");
+    break;
+}
+// Напиши скрипт вибору готеля по кількості зірок (1 — 20$, 2 — 30$, 3 — 50$, 4 — 70$, 5 — 120$). Якщо в змінній stars щось окрім чисел 1-5, виведи рядок: 'Токої кількості зірок немає'.
+const stars = parseInt(prompt(
+  "Введіть кількість зірок готелю у який Ви хочете приїхати"
+));
+const starsOne = "20$";
+const starsTwo = "30$";
+const starsThree = "50$";
+const starsFour = "70$";
+const starsFive = "120$";
+const numberStars1 = 1;
+const numberStars2 = 2;
+const numberStars3 = 3;
+const numberStars4 = 4;
+const numberStars5 = 5;
+switch (stars) {
+  case numberStars1:
+    alert(`Ціна готелю ${starsOne}`);
+    break;
+  case numberStars2:
+    alert(`Ціна готелю ${starsTwo}`);
+    break;
+  case numberStars3:
+    alert(`Ціна готелю ${starsThree}`);
+    break;
+  case numberStars4:
+    alert(`Ціна готелю ${starsFour}`);
+    break;
+  case numberStars5:
+    alert(`Ціна готелю ${starsFive}`);
+    break;
+  default:
+    alert("Цієї кількості зірок немає");
+    break;
+}
+// У мене є сумніві щодо раціональності реалізації цього завдання, тому що велика низка змінних записано. Може є коротший шлях. В принципі можна записати в інтерполяції ціну, а не змінну яка підтягується з пам'яті, в цьому випадку ми скоротимо в пам'яті комп'ютера змінні.
