@@ -1,51 +1,62 @@
-// Створити змінну з іменем age і присвоїти їй значення свого віку. Вивести значення цієї змінної в консоль.
-const age = 17;
-console.log(age);
-// Створити змінну з іменем name і присвоїти їй значення свого імені. Вивести значення цієї змінної в консоль.
-const name = "Daniil";
-console.log(name);
-// Створити змінну з іменем isStudent і присвоїти їй значення true або false, залежно від того, чи є студентом. Вивести значення цієї змінної в консоль.
-const isStudent = "true";
-console.log(isStudent);
-// Створити змінну з іменем myString і присвоїти їй рядок з вашої улюбленою цитатою. Вивести цей рядок в консоль.
-const myString = "Навіть найдовший шлях починається з першого кроку.";
-console.log(myString);
-// Створити змінну з іменем myNumber і присвоїти їй довільне числове значення. Потім присвоїти цій змінній результат додавання до неї числа 10. Вивести значення myNumber в консоль.
-const myNumber = "50" + 10;
-console.log(myNumber);
-// Створити змінну з іменем myNull і присвоїти їй значення null. Вивести значення цієї змінної в консоль
-const myNull = "null";
-console.log(myNull);
-// Створити скрипт який виводить спливаюче вікно з запитом на введення імені користувача за допомогою prompt(). Після введення імені вивести повідомлення привітання з використанням введеного імені.
-// схема
-// if (умова){
-//     інструкція1
-// }
-// else{
-//     інструкція2
-// }
-const userNames = prompt("введіть ім'я");
-if (userNames) {
-  alert("Вітаю, " + userNames + "!");
-} else {
-  alert("Привіт, анонім!");
-}
-// >= цей значить більше або дорівнює нашому значенню
-const ages = prompt("Скільки вам років?");
-if (ages >= 18) {
-  alert("Ви можете продовжувати свої дії!");
-} else {
-  alert("Ви Не можете продовжувати свої дій, так як вам ще немає 18 років.");
-}
-// Створити скрипт який виводить спливаюче підтвердження за допомогою confirm(). Якщо користувач підтверджує дію, вивести повідомлення "Дякую за підтвердження!". Якщо користувач відмовляється, вивести повідомлення "Дію відмінено!".
-const user = confirm("Ви підтверджуєте дію");
-// але ще не знаю як правильно сформувати умовуу
-if (user) {
-  console.log("Дякую за підтвердження!");
-} else {
-  console.log("Дію відмінено!");
-}
-// Створити скрипт який виводить спливаюче попередження за допомогою alert(). Вивести повідомлення про те, що дія небезпечна та попросити користувача підтвердити дію за допомогою confirm(). Якщо користувач підтверджує дію, вивести повідомлення "Дякую за підтвердження!". Якщо користувач відмовляється, вивести повідомлення "Дію відмінено!".
+const logItems = function (array) {
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    console.log(i + 1 + " - " + element);
+  }
+};
+logItems(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]);
+logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
 
-// if else - якщо - інакше
-// if  відпрацьовує тільки у випадку коли в круглих дужках true
+const calculateEngravingPrice = function (message, pricePerWord) {
+  const arr = message.split(" ");
+  const wordNum = arr.length;
+  const price = pricePerWord * wordNum;
+  console.log(price);
+  return price;
+};
+
+calculateEngravingPrice(prompt("Введіть рядок для гравіювання"), 50);
+calculateEngravingPrice(
+  "Proin sociis natoque et magnis parturient montes mus",
+  10
+);
+calculateEngravingPrice(
+  "Proin sociis natoque et magnis parturient montes mus",
+  20
+);
+calculateEngravingPrice("Donec orci lectus aliquam est magnis", 40);
+calculateEngravingPrice("Donec orci lectus aliquam est magnis", 20);
+
+const findLongestWord = function (string) {
+  const strings = string.split(" ");
+  let bigWord = "";
+  for (let i = 0; i < strings.length; i++) {
+    const stringArr = strings[i];
+    if (stringArr.length > bigWord.length) {
+      bigWord = stringArr;
+    }
+  }
+  return bigWord;
+};
+
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog")); // 'jumped'
+console.log(findLongestWord("Google do a roll")); // 'Google'
+console.log(findLongestWord("May the force be with you")); // 'force'
+
+const formatString = function (string) {
+  if (string.length <= 40) {
+  return string;
+  } else{
+     const format = string.slice(0, 40) + "...";
+     return format;
+  }
+};
+console.log(formatString("Curabitur ligula sapien, tincidunt non."));
+console.log(formatString("Curabitur ligula sapien, tincidunt non."));
+console.log(formatString("Vestibulum facilisis, purus nec pulvinar iaculis."));
+console.log(formatString("Curabitur ligula sapien."));
+console.log(
+  formatString(
+    "Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
+  )
+);
