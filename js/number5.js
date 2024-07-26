@@ -9,7 +9,6 @@ if (word.includes("spam") || word.includes("sale")) {
 // const checkForSpam = function (message) {
 //   const word = message.toLowerCase();
 //   const wordsArr = ["spam", "sale"];
-
 //   for (let i = 0; i < wordsArr.length; i++) {
 //     if (word.includes(wordsArr[i])) {
 //       return true;
