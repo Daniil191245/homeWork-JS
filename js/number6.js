@@ -5,3 +5,27 @@
 // 🔔 Робити перевірку того, що користувач ввів саме число, а не довільний набір символів, не обов'язково. Якщо хочеш, в разі некоректного введення, показуй alert з текстом 'Було введено не число, попробуйте ще раз', при цьому результат prompt записувати в масив чисел не потрібно, після чого знову користувачеві пропонується ввести число в prompt.
 
 // можете пояснити цю задачку
+
+
+let input;
+const numbers = [];
+let total = 0;
+while (true) {
+    // будь-яке текстове поле повертає строку
+  input = prompt("Введіть число");
+  if (input === null) {
+    break;
+  }
+  input = Number(input);
+if (Number.isNaN(input)) {
+    console.log("Введи число");
+    continue;
+}
+}
+console.log(numbers)
+if (numbers.length > 0) {
+    for (const number of numbers) {
+        total += number;
+    }
+}
+console.log("sum", total);
